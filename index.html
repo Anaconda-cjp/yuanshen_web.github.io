@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/daohangtiao.css">
+    <link rel="stylesheet" href="css/news.css">
+    <link rel="stylesheet" href="css/indexthreeguojia.css">
+</head>
+
+<style type="">
+    *{ margin:0;
+        padding:0;
+        filter: gray(0.4);
+    }
+    body{
+        margin:0; padding:0;
+        overflow-x:hidden
+    }
+
+    body{
+        background: url(image/star.gif) no-repeat center center fixed;
+        background-size: cover;
+        z-index: -11;
+
+    }
+
+    .middle1{
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+        float: left;
+        text-align: center;
+        width: 100%;
+        height: 260px;
+        position: relative;
+
+
+    }
+
+    /*按钮*/
+    button{
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        font-size: 30px;
+        background-color: rgba(0,0,0,0);
+        color: white;
+        margin-left: 47%;
+        top: 100px;
+    }
+    .videos {
+        display: none;
+        position: fixed;
+        margin-top: 20%;
+        left: 50%;
+        top: 40%;
+        width: 70%;
+        z-index: 100;
+        transform: translate(-50%, -50%);
+    }
+
+    video{
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        width: 100%;
+
+        z-index:-11
+    }
+    #xinwenzixun{
+        width: 100%;
+        margin-top: 15%;
+
+        color: white;
+        font-size: 36px;
+    }
+
+    #second-block {
+        margin-top: 0;
+        width: 100%;
+        background-image: url("image/newsbackground.jpg");
+        z-index: -11;
+        height: 800px;
+    }
+    h2 {
+        padding-top: 100px;
+    }
+    p {
+        color: snow;
+    }
+    h3 {
+        color: white;
+        position: absolute;
+        margin-left: 47%;
+        margin-top: 100px;
+        font-size: 50px;
+    }
+
+</style>
+
+<body>
+<!--背景音乐-->
+<audio id="bgmusic" src="music/shouyebgm.mp3" autoplay style="margin-top: 0;"></audio>
+<!--注意细节，这里background-size保证图片放大-->
+<button id="btn1" title="播放/停止" onclick="playPause()" style="background: url('image/play_start.png') center no-repeat ;width: 50px;height:50px;border: none;
+margin-left: 2vw;margin-top: 80vh;position: fixed;background-size: 100% 100%;z-index: 11"></button>
+<script>
+    var v=document.getElementById("bgmusic");
+    var b=document.getElementById("btn1")
+    function playPause(){
+        if(v.paused){
+            v.play();
+            b.style.background="url('image/play_start.png')";
+            b.style.backgroundSize="100% 100%";
+        }
+        else{
+            v.pause()//这里注意了,一般script代码放在对应事件后面比较好,防止事件还没加载就读了代码！！！！！！！！比如这里放开头就无效！
+            b.style.background="url('image/play_close.png')";
+            b.style.backgroundSize="100% 100%";
+        }
+    }
+</script>
+<!--导航条-->
+<!--z-index是防止被轮播图挡住导航条-->
+<header style="position: fixed;z-index: 10">
+    <nav>
+        <ul>
+            <li><a id="log" href="https://ys.mihoyo.com/main/" title="点我前往官方查看更多信息!" target="_blank">&nbsp;</a></li>
+            <li><a href="index.html" title="首页" target="_blank">首页</a></li>
+            <li><a href="page2new2.html" title="世界" target="_blank">世界</a></li>
+            <li><a href="juese3.html" title="角色" target="_blank">角色</a></li>
+            <li><a href="erchuang1.html" title="二创" target="_blank">二创</a></li>
+            <li><a href="music.html" title="音乐" target="_blank">音乐</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- 遮罩层 -->
+<div id="cover"
+     style="background: #000; position: absolute; left: 0px; top: 0px; width: 100%; filter: alpha(opacity=30); opacity: 0.3; display: none; z-index: 2 ">
+
+</div>
+<div class="rol" style="">
+    <div class="banner">
+        <div class="one"
+             vpath="image/bofang.png"
+             ipath="image/ys.mp4">
+            <img src="image/bofang.png"
+                 alt="1" style="width: 6%;margin-left: 45%;margin-top: 23%">
+
+        </div>
+
+    </div>
+    <div class="videos">
+    </div>
+    <video autoplay loop muted  >
+        <source src="image/ysbg.mp4" type="video/mp4"  />
+    </video>
+
+
+
+</div>
+<div id="second-block">
+<div id="xinwenzixun">
+<!--    <img src="image/leftlog.png" alt="" style="display: inline-block;float: left;margin-top: 150px;">-->
+<!--    <h2 style="display: inline-block;float: left;margin-top: 100px" align="center">新闻资讯</h2>-->
+    <h2 align="center">新闻资讯</h2>
+<!--    <img src="image/rightlog.png" alt="" style="display: inline-block;float: left;margin-top: 150px">-->
+</div>
+<!--新闻部分-->
+<div id="news1" style="z-index: 1;position: relative">
+    <!--新闻轮播部分-->
+    <div id="adv">
+        <ul>
+            <li class="lunbo1"><span></span>
+                <div></div>
+            </li>
+            <li class="lunbo2"><span></span>
+                <div></div>
+            </li>
+            <li class="lunbo3"><span></span>
+                <div></div>
+            </li>
+            <li class="lunbo4"><span></span>
+                <div></div>
+            </li>
+
+        </ul>
+
+    </div>
+    <!--新闻栏-->
+    <section id="best-selling">
+        <span class="icon-sell"></span>
+        <!--    新闻上的导航条-->
+        <nav class="news">
+            <ul>
+                <li id="zuixin"><a id="zuixin2" href="#" title="最新" target="_blank">最新</a></li>
+                <li id="xinwen"><a id="xinwen2" href="#" title="新闻" target="_blank">新闻</a></li>
+                <li id="gonggao"><a id="gonggao2" href="#" title="公告" target="_blank">公告</a></li>
+                <li id="huodong"><a id="huodong2" href="#" title="活动" target="_blank">活动</a></li>
+            </ul>
+        </nav>
+        <!--    实现点击列表项更换新闻栏内容-->
+        <script type="text/javascript" src="js/news.js">
+
+        </script>
+        <ul>
+            <li >
+                <a id="zuixin1" href="https://ys.mihoyo.com/main/news/detail/19368" class="selling">《原神》小剧场——「璃月雅集」第四期</a>
+            </li>
+            <li>
+                <a id="xinwen1" href="#" class="selling">《原神》2.4版本前瞻特别节目预告</a>
+            </li>
+            <li>
+                <a id="gonggao1" href="#" class="selling">《原神》特别信件——【12.24】开发组座谈会</a>
+            </li>
+            <li>
+                <a id="huodong1" href="#" class="selling">《原神》「导能原盘·跋尾」玩法说明</a>
+            </li>
+            <li>
+                <a href="#" class="selling">《原神》「导能原盘·跋尾」活动即将开启</a>
+            </li>
+        </ul>
+    </section>
+</div>
+
+</div>
+<a href="juese3.html">
+<div id="mengdefooter" class="middle1" style=" background-image: url('image/mengdefooter.jpg');" >
+  <h3 ><strong><font color="#fff">蒙德城</font></strong></h3>
+  <img src="image/qinsmall.png"  >
+</div>
+</a>
+<a href="juese2.html">
+<div id="liyuefooter" class="middle1" >
+    <h3 ><strong><font color="#fff">璃月港</font></strong></h3>
+   <img src="image/xiaosmall.png"  >
+<!--    <img src="image/liyuefooter.jpg"  style="width: 100%">-->
+</div></a>
+<a href="juese1.html">
+<div id="daoqifooter" class="middle1" >
+    <h3 ><strong><font color="#fff">稻妻城</font></strong></h3>
+
+    <img src="image/shenlismall.png" >
+<!--    <img src="image/daoqifooter.jpg"  style="width: 100%">-->
+</div></a>
+
+
+
+<!--  页脚-->
+<footer>
+    <nav>
+        <ul>
+            <li><a href="https://weibo.com/ysmihoyo" title="微博" target="_blank" style="margin-left: 25%"><img src="image/新浪微博1..png" alt=""></a></li>
+            <li><a href="https://uploadstatic.mihoyo.com/contentweb/20200611/2020061111554428546.png" title="微信" target="_blank"><img src="image/微信%20(2).png" alt=""></a></li>
+            <li><a href="https://connect.qq.com/widget/shareqq/index.html?url=https://ys.mihoyo.com&title=%E4%B8%80%E8%B5%B7%E5%8E%BB%E6%96%B0%E5%A4%A9%E5%9C%B0%E5%86%92%E9%99%A9%E5%90%A7%EF%BC%81%E7%B1%B3%E5%93%88%E6%B8%B8%E6%96%B0%E4%BD%9C%E3%80%8A%E5%8E%9F%E7%A5%9E%E3%80%8B%E6%B5%8B%E8%AF%95%E6%8B%9B%E5%8B%9F%E5%BC%80%E5%90%AF%EF%BC%8C%E5%9C%A8%E5%AE%8C%E5%85%A8%E6%9C%AA%E7%9F%A5%E7%9A%84%E5%B7%A8%E5%A4%A7%E4%B8%96%E7%95%8C%EF%BC%8C%E8%B8%8F%E4%B8%8A%E5%8F%AA%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E6%97%85%E7%A8%8B%E3%80%82&pics=http://uploadstatic.mihoyo.com/contentweb/20190605/2019060514593087354.jpg" title="分享" target="_blank"><img src="image/分享方式.png" alt=""></a></li>
+            <li><a href="https://shang.qq.com/wpa/qunwpa?idkey=36fc0062c930578950afe36e95ca94fa76ab74b2f5c76c40b2bc94aa14c6fb15" title="qq" target="_blank"><img src="image/qq.png" alt=""></a></li>
+
+        </ul>
+    </nav>
+    <img src="image/footer.png" alt="">
+</footer>
+
+  <!-- mainbody的背景结尾处 -->
+</div>
+
+<!-- 视频 -->
+<script src="http://cdn.suoluomei.com/common/js/jquery-2.1.4.min.js "></script>
+<script src="js/videoplayer.js">
+
+
+</script>
+<!--弹窗背景变暗-->
+<script src="js/dark.js"></script>
+<!--鼠标移动特效-->
+<script src="js/mousemove.js"></script>
+<!--<script type="text/javascript">-->
+<!--    // 弹窗-->
+<!--    function showWindow() {-->
+<!--        $('#showdiv').show();  //显示弹窗-->
+<!--        $('#cover').css('display', 'block'); //显示遮罩层-->
+<!--        $('#cover').css('height', document.body.clientHeight + 'px'); //设置遮罩层的高度为当前页面高度-->
+<!--    }-->
+
+<!--    // 关闭弹窗-->
+<!--    function closeWindow() {-->
+<!--        $('#showdiv').hide();  //隐藏弹窗-->
+<!--        $('#cover').css('display', 'none');   //显示遮罩层-->
+<!--    }-->
+<!--</script>-->
+
+
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>角色界面</title>
+    <link rel="stylesheet" href="css/daohangtiao.css">
+    <link rel="stylesheet" href="css/role.css">
+    <script src="http://cdn.suoluomei.com/common/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+
+</head>
+<body style="background-image: url('image_juese/mengdebg.jpg')">
+<!--背景音乐-->
+<audio id="bgmusic" src="music/mengdebg1.mp3" autoplay style="margin-top: 0;" loop></audio>
+<!--注意细节，这里background-size保证图片放大-->
+<button id="btn1" title="播放/停止" onclick="playPause()" style="background: url('image/play_start.png') center no-repeat ;width: 50px;height:50px;border: none;
+margin-left: 2vw;margin-top: 80vh;position: fixed;background-size: 100% 100%;z-index: 11"></button>
+<script>
+    var v=document.getElementById("bgmusic");
+    var b=document.getElementById("btn1")
+    function playPause(){
+        if(v.paused){
+            v.play();
+            b.style.background="url('image/play_start.png')";
+            b.style.backgroundSize="100% 100%";
+        }
+        else{
+            v.pause()//这里注意了,一般script代码放在对应事件后面比较好,防止事件还没加载就读了代码！！！！！！！！比如这里放开头就无效！
+            b.style.background="url('image/play_close.png')";
+            b.style.backgroundSize="100% 100%";
+        }
+    }
+</script>
+
+
+<header style="position: fixed;z-index: 10">
+    <nav>
+        <ul>
+            <li><a id="log" href="https://ys.mihoyo.com/main/" title="点我前往官方查看更多信息!" target="_blank">&nbsp;</a></li>
+            <li><a href="index.html" title="首页" target="_blank">首页</a></li>
+            <li><a href="page2new2.html" title="世界" target="_blank">世界</a></li>
+            <li><a href="juese3.html" title="角色" target="_blank">角色</a></li>
+            <li><a href="erchuang1.html" title="二创" target="_blank">二创</a></li>
+            <li><a href="music.html" title="音乐" target="_blank">音乐</a></li>
+        </ul>
+    </nav>
+</header>
+<!--角色名字框-->
+<div class="role_name">
+
+</div>
+<!--人物介绍框-->
+<div class="jueseintroduce">
+
+</div>
+<div class="juesexinxi">
+    <img src="image_juese/qing.png" class="role_img">
+</div>
+<!--制作左侧超链接-->
+<div class="nav-left">
+    <ul>
+        <li><a href="juese3.html">蒙德城</a></li>
+        <li><a href="juese2.html">璃月港</a></li>
+        <li><a href="juese1.html">稻妻城</a></li>
+    </ul>
+</div>
+
+<!--制作角色选择框-->
+<div class="select_div">
+    <img class="arrow_left" src="image_juese/leftarrow.png" alt="before">
+    <img class="touxiang" src="image_juese/qingtx.png" alt="">
+    <img class="touxiang" src="image_juese/kaiyatx.png" alt="">
+    <img class="touxiang" src="image_juese/lsliyatx.png" alt="">
+    <img class="touxiang" src="image_juese/babalatx.png" alt="">
+    <img class="touxiang" src="image_juese/wenditx.png" alt="">
+    <img class="touxiang" src="image_juese/kelitx.png" alt="next">
+    <img src="image_juese/rightarrow.png" class="arrow_right" alt="">
+</div>
+
+
+<footer>
+    <nav>
+        <ul>
+            <li><a href="https://weibo.com/ysmihoyo" title="微博" target="_blank" style="margin-left: 25%"><img src="image/新浪微博1..png" alt=""></a></li>
+            <li><a href="https://uploadstatic.mihoyo.com/contentweb/20200611/2020061111554428546.png" title="微信" target="_blank"><img src="image/微信%20(2).png" alt=""></a></li>
+            <li><a href="https://connect.qq.com/widget/shareqq/index.html?url=https://ys.mihoyo.com&title=%E4%B8%80%E8%B5%B7%E5%8E%BB%E6%96%B0%E5%A4%A9%E5%9C%B0%E5%86%92%E9%99%A9%E5%90%A7%EF%BC%81%E7%B1%B3%E5%93%88%E6%B8%B8%E6%96%B0%E4%BD%9C%E3%80%8A%E5%8E%9F%E7%A5%9E%E3%80%8B%E6%B5%8B%E8%AF%95%E6%8B%9B%E5%8B%9F%E5%BC%80%E5%90%AF%EF%BC%8C%E5%9C%A8%E5%AE%8C%E5%85%A8%E6%9C%AA%E7%9F%A5%E7%9A%84%E5%B7%A8%E5%A4%A7%E4%B8%96%E7%95%8C%EF%BC%8C%E8%B8%8F%E4%B8%8A%E5%8F%AA%E5%B1%9E%E4%BA%8E%E4%BD%A0%E7%9A%84%E6%97%85%E7%A8%8B%E3%80%82&pics=http://uploadstatic.mihoyo.com/contentweb/20190605/2019060514593087354.jpg" title="分享" target="_blank"><img src="image/分享方式.png" alt=""></a></li>
+            <li><a href="https://shang.qq.com/wpa/qunwpa?idkey=36fc0062c930578950afe36e95ca94fa76ab74b2f5c76c40b2bc94aa14c6fb15" title="qq" target="_blank"><img src="image/qq.png" alt=""></a></li>
+
+
+        </ul>
+    </nav>
+    <img src="image/footer.png" alt="">
+</footer>
+
+</body >
+<!--引用role的js-->
+<script src="js/role3.js" type="text/javascript" charset="UTF-8"></script>
+<!--点击切换的js-->
+<!--注意！！！！！这里不要再src了，连着两个src可能会出问题，把src引入jquery写上面-->
+<script type="text/javascript" src="js/xuanzekuang.js">
+
+
+</script>
+<script src="js/mousemove.js"></script>
+<script type="text/javascript" src="js/bglunhuan2.js"></script>
+</html>

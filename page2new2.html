@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>世界</title>
+    <link rel="stylesheet" href="css/daohangtiao.css">
+    <style type='text/css'>
+        /*下面的星号让素有元素内外边距都为0，不留空隙*/
+        * {
+            padding: 0px;
+            margin: 0px;
+            /*我们让整个屏幕都有一种淡淡的背景色*/
+        }
+
+        body {
+            background: url("image/star.gif") no-repeat center center fixed;
+            background-size: cover;
+
+        }
+
+        /*下面这个box是承载全部网页内容的容器样式，是下面所有div元素的父级元素的样式，注意一定要先将字号设为0，否则主体和页脚之间会有一条白色缝隙*/
+        #box {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            margin: 0 auto;
+            font-size: 0;
+            margin-top: 0;
+        }
+
+        #nav {
+            margin-top: 20vh;
+            display: inline-block;
+            width: 13%;
+            height: 40vh;
+            background-color: rgba(255, 255, 255, 0.1);
+
+        }
+
+        #main {
+            margin-top: 15vh;
+            display: inline-block;
+            /*width:1319px;*/
+            width: 85%;
+            height: 520px;
+            float: right;
+            color: honeydew;
+
+        }
+
+        #main h2 {
+            color: cadetblue;
+        }
+
+        a {
+            text-decoration: none; /*去掉字下划线*/
+            margin: 0 20px;
+            color: #c0c0c0;
+        }
+
+        a:hover {
+            color: gold;
+        }
+
+        li:nth-of-type(2n) { /*2n表示偶数行*/
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        li:hover { /*hover表示鼠标放上去之后的变化*/
+            background-color:rgba(255,255,255,0.2);
+        }
+
+        #nav ul li a{
+            background-color: rgb(23, 25, 67); /*0.7表示透明度*/
+            overflow: hidden; /*隐藏圆点*/
+            line-height: 60px; /*行高*/
+        }
+
+        #main p {
+            display: block;
+            float: left;
+        }
+
+        img {
+            width: 30%;
+            margin-top: 50px;
+            margin-left: 1.5%;
+        }
+
+
+        header nav ul li a{
+            margin-left: -20px;
+        }
+        #log{
+            margin-left: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+<!--背景音乐-->
+<audio id="bgmusic" src="music/shijiebg.mp3" autoplay style="margin-top: 0;"></audio>
+<!--注意细节，这里background-size保证图片放大-->
+<button id="btn1" title="播放/停止" onclick="playPause()" style="background: url('image/play_start.png') center no-repeat ;width: 50px;height:50px;border: none;
+margin-left: 2vw;margin-top: 80vh;position: fixed;background-size: 100% 100%;z-index: 11"></button>
+<script>
+    var v=document.getElementById("bgmusic");
+    var b=document.getElementById("btn1")
+    function playPause(){
+        if(v.paused){
+            v.play();
+            b.style.background="url('image/play_start.png')";
+            b.style.backgroundSize="100% 100%";
+        }
+        else{
+            v.pause()//这里注意了,一般script代码放在对应事件后面比较好,防止事件还没加载就读了代码！！！！！！！！比如这里放开头就无效！
+            b.style.background="url('image/play_close.png')";
+            b.style.backgroundSize="100% 100%";
+        }
+    }
+</script>
+
+
+<header style="position: fixed;z-index: 10">
+    <nav>
+        <ul>
+            <li><a id="log" href="https://ys.mihoyo.com/main/" title="点我前往官方查看更多信息!" target="_blank">&nbsp;</a></li>
+            <li><a href="index.html" title="首页" target="_blank">首页</a></li>
+            <li><a href="page2new2.html" title="世界" target="_blank">世界</a></li>
+            <li><a href="juese3.html" title="角色" target="_blank">角色</a></li>
+            <li><a href="erchuang1.html" title="二创" target="_blank">二创</a></li>
+            <li><a href="music.html" title="音乐" target="_blank">音乐</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div id='box'>
+
+    <div id='nav'>
+        <ul type='none' style="font-size:30px;margin-left:0px;margin-top:50px;">
+            <li ><a href="#"><span>区域列表</span></a></li>
+            <li ><a href="game_html/fzzl.html"><span>蒙德</span></a></li>
+            <li><a href="game_html/snqx.html"><span>璃月</span></a></li>
+            <li><a href="game_html/wzry.html"><span>稻妻</span></a></li>
+        </ul>
+    </div>
+
+    <div id='main'>
+        <h2 style='font-size:30px;margin-left:40%;margin-top:100px;'>区域一览</h2>
+
+        <img src="image/mengde1.png"  style="height: 295px;">
+       <img src="image/liyue1.png"  style="height: 295px;">
+            <img src="image/daoqi.png"  style="height: 295px;">
+        <p style='font-size:30px;margin-left:15%;margin-top:50px;'>蒙德</p>
+        <p style='font-size:30px;margin-left:25%;margin-top:50px;'>璃月</p>
+        <p style='font-size:30px;margin-left:25%;margin-top:50px;'>稻妻</p>
+        <a href="game_html/fzzl.html"><p style='font-size:25px;margin-left:20%;margin-top:20px;'>更多...</p></a>
+        <a href="game_html/snqx.html"><p style='font-size:25px;margin-left:25%;margin-top:20px;'>更多...</p></a>
+        <a href="game_html/wzry.html"><p style='font-size:25px;margin-left:25%;margin-top:20px;'>更多...</p></a>
+    </div>
+</div>
+<script src="js/mousemove.js"></script>
+</body>
+
+<footer style="position: absolute;margin-top: 100vh">
+<!--    <nav>-->
+<!--        <ul>-->
+<!--            <li><a href="https://weibo.com/ysmihoyo" title="微博" target="_blank" style="margin-left: 25%;margin-top: 0"><img src="image/新浪微博1..png" alt=""></a></li>-->
+<!--            <li><a href="#" title="微信" target="_blank"><img src="image/微信%20(2).png" alt=""></a></li>-->
+<!--            <li><a href="#" title="分享" target="_blank"><img src="image/分享方式.png" alt=""></a></li>-->
+<!--            <li><a href="#" title="qq" target="_blank"><img src="image/qq.png" alt=""></a></li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+    <img src="image/footer.png" alt="" style="width: 101%;margin-left: -10px">
+</footer>
+</html>
